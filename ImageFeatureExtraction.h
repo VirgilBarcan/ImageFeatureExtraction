@@ -20,6 +20,7 @@ private:
     int width;
     int height;
     int globalColorHistogram[NO_OF_BINS][NO_OF_BINS][NO_OF_BINS];
+    int localColorHistogramBins[NO_OF_BLOCKS][NO_OF_BINS][NO_OF_BINS][NO_OF_BINS];
 
     //Private functions
     /**
@@ -27,6 +28,12 @@ private:
      * This method initializes the globalColorHistogram
      */
     void initGlobalColorHistogram();
+
+    /**
+     * @brief initLocalColorHistogram
+     * This method initializes the localColorHistogramBins
+     */
+    void initLocalColorHistogram();
 
 public:
     /**
@@ -69,6 +76,20 @@ public:
      *   RedBinNo GreenBinNo BlueBinNo PixelCount
      */
     void printGlobalColorHistogram();
+
+    /**
+     * @brief calculateLocalColorHistogram
+     * This method calculates the LCH
+     * It separates the image into 16 blocks and calculates for every block the color histogram
+     */
+    void calculateLocalColorHistogram();
+
+    /**
+     * @brief printLocalColorHistogram
+     * This method prints the localColorHistogram in an easy to read format:
+     *  BlockNo RedBinNo GreenBinNo BlueBinNo PixelCount
+     */
+    void printLocalColorHistogram();
 };
 
 # endif // IMAGE_FEATURE_EXTRACTION_H

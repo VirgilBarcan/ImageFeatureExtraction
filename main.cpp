@@ -10,8 +10,11 @@ int main(int argc, char *argv[])
     }
 
     ImageFeatureExtraction imf(imageFilePath);
-    imf.calculateGlobalColorHistogram();
-    imf.printGlobalColorHistogram();
+    //imf.calculateGlobalColorHistogram();
+    //imf.printGlobalColorHistogram();
+
+    imf.calculateLocalColorHistogram();
+    imf.printLocalColorHistogram();
 
     return 0;
 }
